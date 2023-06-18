@@ -29,3 +29,7 @@ INSERT INTO index_mass VALUES (4, 100, 200);
 
 ### Задание 3
 
+1. Для сохранения данных внесённых в контейнер на постоянной основе, добавлен параметр VOLUME в Dockerfile. Для создания контейнера с использованием тома нужно ввести команду ниже:
+```sh
+docker run -d -p 5432:5432 --name test_container_pg -v /data_pg:/var/lib/postgresql/data test_image_pg:latest
+```
