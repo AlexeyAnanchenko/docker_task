@@ -15,3 +15,17 @@ docker build -t test_image_pg:latest .
 docker run -d -p 5432:5432 --name test_container_pg test_image_pg:latest
 ```
 
+### Задание 2
+
+1. Для подключения к созданной БД в контейнере (test_db) из командной строки под указанным в Dockerfile-е пользователем (username) нужно воспользоваться следующей командой. В самом контейнере при этом запускаем утилиту psql и с помощью неё работаем с БД:
+```sh
+docker exec -it test_container_pg psql -U username testdb
+```
+
+2. Далее можно использовать синтаксис SQL для внесения данных, например:
+```sh
+INSERT INTO index_mass VALUES (4, 100, 200);
+```
+
+### Задание 3
+
